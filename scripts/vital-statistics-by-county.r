@@ -22,9 +22,9 @@ texas <- subset(counties, counties$STATEFP %in% '48')
 # counties in three lines of code
 
 leaflet(texas) %>% 
-addProviderTiles('Stamen.TonerLite') %>% 
-addPolygons(color = '#002868', fillColor = '#BF0A30', 
-opacity = 1, fillOpacity = .75, popup = ~NAME)
+  addProviderTiles('Stamen.TonerLite') %>% 
+  addPolygons(color = '#002868', fillColor = '#BF0A30', 
+    opacity = 1, fillOpacity = .75, popup = ~NAME)
 
 # What if you wanna jazz it up with some demo data? Easy peasy!
 # First, download some data grouped by county. I again relied on
