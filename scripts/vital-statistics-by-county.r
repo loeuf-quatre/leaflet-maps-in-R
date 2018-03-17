@@ -18,19 +18,10 @@ counties <- readOGR(dsn = '.', layer = 'cb_2015_us_county_500k')
 
 texas <- subset(counties, counties$STATEFP %in% '48')
 
-# Don't tell anyone that you created a handsome map of Texas
-# counties in three lines of code
-
 leaflet(texas) %>% 
   addProviderTiles('Stamen.TonerLite') %>% 
   addPolygons(color = '#002868', fillColor = '#BF0A30', 
     opacity = 1, fillOpacity = .75, popup = ~NAME)
-
-# What if you wanna jazz it up with some demo data? Easy peasy!
-# First, download some data grouped by county. I again relied on
-# the Census Bureau for vital statistics. The metric of interest 
-# is on sheet five, column VST020207D (2007 live births per 1000)
-# http://www2.census.gov/prod2/statcomp/usac/excel/VST01.xls
 
 birthRate <- read_excel('vital-statistics-by-county-2007-census.xls', 
   sheet = 5, col_names = T)
