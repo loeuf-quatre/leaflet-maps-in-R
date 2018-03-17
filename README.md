@@ -16,10 +16,8 @@ library(rgdal)
 
 counties <- readOGR(dsn = '.', layer = 'cb_2015_us_county_500k')
 
-# You've heard the rumors, but Texas does actually fit within 
-# the contiguous United States. Let's involve ourselves with 
-# its counties. Note that '48' identifies Texas' counties in 
-# the shapefile (see FIPS file)
+# Let's involve ourselves with Texas. Note that '48' 
+# identifies Texas' counties in the shapefile (see FIPS file)
 
 texas <- subset(counties, counties$STATEFP %in% '48')
 
